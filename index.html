@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+  </link>
+
+</head>
+
+<body>
+  <center>
+
+    <form id="cal" name="cal">
+      <input TYPE="text" id="head" value="CALCULATOR">
+      <input TYPE="text" id="history" name="history">
+      <input TYPE="text" id="result" name="result">
+      <input TYPE="button" class="num" id="clear" value="C" onclick="cal.result.value = ' ' ">
+      <input TYPE="button" class="num" id="backspace" value="CE" onclick="back()" ;>
+      <input TYPE="button" class="num" id="modulus" value="%" style="font-weight: bold;"
+        onclick="cal.result.value += '%'  ">
+      <input TYPE="button" class="num" id="divide" value="&#247;" onclick="cal.result.value +='/'  "> <br>
+      <input TYPE="button" class="num" id="7" value="7" onclick="cal.result.value +='7'  ">
+      <input TYPE="button" class="num" id="8" value="8" onclick="cal.result.value +='8'  ">
+      <input TYPE="button" class="num" id="9" value="9" onclick="cal.result.value +='9'  ">
+      <input TYPE="button" class="num" id="multiply" value="&times;" onclick="cal.result.value += '*'  "> <br>
+      <input TYPE="button" class="num" id="6" value="6" onclick="cal.result.value +='6'  ">
+      <input TYPE="button" class="num" id="5" value="5" onclick="cal.result.value +='5'  ">
+      <input TYPE="button" class="num" id="4" value="4" onclick="cal.result.value +='4'  ">
+      <input TYPE="button" class="num" id="minus" value="&#8722;" onclick="cal.result.value +='-' "><br>
+      <input TYPE="button" class="num" id="3" value="3" onclick="cal.result.value +='3'">
+      <input TYPE="button" class="num" id="2" value="2" onclick="cal.result.value +='2'">
+      <input TYPE="button" class="num" id="1" value="1" onclick="cal.result.value +='1'">
+      <input TYPE="button" class="num" id="add" value="+" onclick="cal.result.value +='+'"> <br>
+      <input TYPE="button" class="num" id="0" style="width: 165px;" value="0" onclick="cal.result.value +='0'">
+      <input TYPE="button" class="num" id="dot" value="." onclick=" cal.result.value += '.'">
+      <input TYPE="button" class="num" id="equal" value="=" onclick="e()">
+
+
+
+    </form>
+    <script>
+      function back() {
+        var str = document.getElementById("result").value;
+        str = str.substr(0, str.length - 1);
+        document.getElementById("result").value = str;
+      }
+      function e() {
+        var A = document.getElementById("result").value;
+        document.getElementById("history").value = A;          //to print history
+        A = eval(document.getElementById("result").value);
+        document.getElementById("result").value = A;           //to evaluate operators
+
+      }
+    </script>
+  </center>
+</body>
+
+</html>
